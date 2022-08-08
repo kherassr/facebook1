@@ -1,0 +1,70 @@
+mkdir api1
+mkdir api2
+mkdir api3
+mkdir api4
+mkdir api5
+mkdir api6
+mkdir api7
+cp -r ./sourceapi/* ./api1
+cp -r ./sourceapi/* ./api2
+cp -r ./sourceapi/* ./api3
+cp -r ./sourceapi/* ./api4
+cp -r ./sourceapi/* ./api5
+cp -r ./sourceapi/* ./api6
+cp -r ./sourceapi/* ./api7
+mv ./api1/BookStoreapi.sln ./api1/BookStoreApi1.sln
+mv ./api1/BookStoreapi.csproj ./api1/BookStoreApi1.csproj
+
+mv ./api2/BookStoreApi.sln ./api2/BookStoreApi2.sln
+mv ./api2/BookStoreApi.csproj ./api2/BookStoreApi2.csproj
+
+sed -f sedr1 ./api1/Properties/launchSettings.json  >te1
+
+mv ./api2/BookStoreApi.sln ./api2/BookStoreApi2.sln
+mv ./api2/BookStoreApi.csproj ./api2/BookStoreApi2.csproj
+
+mv ./api3/BookStoreApi.sln ./api3/BookStoreApi3.sln
+mv ./api3/BookStoreApi.csproj ./api3/BookStoreApi3.csproj
+
+cp ./te1 ./api1/Properties/launchSettings.json
+
+mv ./api4/BookStoreApi.sln ./api4/BookStoreApi4.sln
+mv ./api4/BookStoreApi.csproj ./api4/BookStoreApi4.csproj
+
+mv ./api5/BookStoreApi.sln ./api5/BookStoreApi5.sln
+mv ./api5/BookStoreApi.csproj ./api5/BookStoreApi5.csproj
+
+mv ./api6/BookStoreApi.sln ./api6/BookStoreApi6.sln
+mv ./api6/BookStoreApi.csproj ./api6/BookStoreApi6.csproj
+
+mv ./api7/BookStoreApi.sln ./api7/BookStoreApi7.sln
+mv ./api7/BookStoreApi.csproj ./api7/BookStoreApi7.csproj
+
+sed -f sedr2 ./api2/Properties/launchSettings.json  >te1
+sed -f sedr21 ./te1   >te2
+cp ./te2 ./api2/Properties/launchSettings.json
+
+sed -f sedr3 ./api3/Properties/launchSettings.json  >te3
+cp ./te3 ./api3/Properties/launchSettings.json
+
+sed -f sedr4 ./api4/Properties/launchSettings.json >te4
+cp ./te4 ./api4/Properties/launchSettings.json
+
+sed -f sedr5 ./api5/Properties/launchSettings.json  >te5
+cp ./te5 ./api5/Properties/launchSettings.json
+
+sed -f sedr6 ./api6/Properties/launchSettings.json  >te6
+D
+cp ./te6 ./api6/Properties/launchSettings.json
+
+sed -f sedr7 ./api7/Properties/launchSettings.json  >te7
+cp ./te7 ./api7/Properties/launchSettings.json
+o
+
+dotne run --project ./api1 &
+dotnet run --project ./api2 &
+dotnet run --project ./api3 &
+dotnet run --project ./api4 &
+dotnet run --project ./api5 &
+dotnet run --project ./api6 &
+dotnet run --project ./api7 &
